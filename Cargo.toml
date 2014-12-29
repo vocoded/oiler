@@ -1,0 +1,5 @@
+[package]
+
+name = "oiler"
+version = "0.0.1"
+authors = ["Thomas Hutchings"]
