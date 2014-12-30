@@ -1,20 +1,7 @@
-// Euler problem 1 - Sum all natural numbers less than 1000 divisible by 3 or 5 
+extern crate problems;
 
-// Generate result from standard iterator over a range
-fn sum_of_factors_imperative(max: uint) -> uint {
-  let mut sum = 0u;
-  for i in range(1, max) {
-    if i % 3 == 0 || i % 5 == 0 {
-      sum += i;
-    }
-  }
-  sum
-}
-
-// Generate result with a more functional style
-fn sum_of_factors_functional(max: uint) -> uint {
-  range(1, max).filter(|&i| i % 3 == 0 || i % 5 == 0).fold(0, |i, s| { i + s })
-}
+use problems::problem1::{sum_of_factors_imperative, sum_of_factors_functional};
+use problems::problem2::sum_fibonacci;
 
 fn main() {
   let max = 999u;
@@ -23,4 +10,8 @@ fn main() {
 
   assert!(sum_imperative == sum_functional, "Sums differ");
   println!("The sum of factors of {} is {}", max, sum_imperative);
+
+  let fib_max = 50;
+  let fib_sum = sum_fibonacci(fib_max);
+  println!("The sum of odd fib terms to {} is {}", fib_max, fib_sum);
 }

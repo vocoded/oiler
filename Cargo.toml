@@ -3,3 +3,8 @@
 name = "oiler"
 version = "0.0.1"
 authors = ["Thomas Hutchings"]
+
+[lib]
+
+name = "problems"
+path = "src/problems.rs"
